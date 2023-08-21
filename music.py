@@ -102,8 +102,8 @@ async def playerfun(ctx, is_skip, zaglushka):
                 unitaz = ["deezer"]
             #print(cur_play)
             if 'youtu' in unitaz[0]:
-                source = discord.FFmpegPCMAudio(cur_play["formats"][4]["fragments"][0]["url"] + '?fifo_size=1000000&overrun_nonfatal=1',options=FFMPEG_OPTIONS,before_options=FFMPEG_OPTIONS_BEFORE)
-                print(cur_play["formats"][4]["fragments"][0]["url"])
+                #print(cur_play["formats"][4]["fragments"][0]["url"] + '?fifo_size=1000000&overrun_nonfatal=1')
+                source = discord.FFmpegPCMAudio(cur_play["formats"][4]["url"] + '?fifo_size=1000000&overrun_nonfatal=1',options=FFMPEG_OPTIONS,before_options=FFMPEG_OPTIONS_BEFORE)
             elif 'deezer' in unitaz[0]:
                 source = discord.FFmpegPCMAudio(cur_play["url"],options=FFMPEG_OPTIONS,before_options=FFMPEG_OPTIONS_BEFORE)
             else:
@@ -143,7 +143,7 @@ async def playerfun(ctx, is_skip, zaglushka):
                         unitaz = ["deezer"]
                     #print(cur_play)
                     if 'youtu' in unitaz[0]:
-                        source = discord.FFmpegPCMAudio(cur_play["formats"][4]["fragments"][0]["url"] + '?fifo_size=1000000&overrun_nonfatal=1',options=FFMPEG_OPTIONS,before_options=FFMPEG_OPTIONS_BEFORE)
+                        source = discord.FFmpegPCMAudio(cur_play["formats"][4]["url"] + '?fifo_size=1000000&overrun_nonfatal=1',options=FFMPEG_OPTIONS,before_options=FFMPEG_OPTIONS_BEFORE)
                     elif 'deezer' in unitaz[0]:
                         source = discord.FFmpegPCMAudio(cur_play["url"],options=FFMPEG_OPTIONS,before_options=FFMPEG_OPTIONS_BEFORE)
                     else:
